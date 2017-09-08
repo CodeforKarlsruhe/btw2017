@@ -15,6 +15,8 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
   * [Wahlbezirke](wahldaten-ka/2017/bundestagswahl_2017_wahlbezirke.geojson)
   * [Wahllokale](wahldaten-ka/2017/bundestagswahl_2017_wahllokale.geojson)
 
+* [Allgemeine Statistiken im Transparenzportal der Stadt Karlsruhe](https://transparenz.karlsruhe.de/daten)
+
 ### Bundesweit
 
 * [Bundestag-Abstimmungsergebnisse auf wahlbilanz.de](https://wahlbilanz.de/) ([GitHub](https://github.com/wahlbilanz/wahlbilanz.de))
