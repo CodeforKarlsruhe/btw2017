@@ -34,3 +34,6 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 * [Online GeoJSON-Editor GeoJSON.io](https://geojson.io)
 
+## Weitere Links
+
+* Viele weitere hilfreiche Links sind im [Wahldaten-Repo der OKF](https://github.com/okfde/wahldaten) zu finden
