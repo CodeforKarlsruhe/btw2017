@@ -26,6 +26,8 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 * [WDR "Wörter der Wahl"](http://data.wdr.de/wdr/nachrichten/landespolitik/landtagswahl/wahlprogramme/) ([GitHub](https://github.com/wdr-data/woerter-der-wahl))
 * [Direktkandidaten Map zur BTW 2013 vom OK Lab Ulm](http://www.ulmapi.de/direktkandidaten-map/) ([GitHub](https://github.com/UlmApi/direktkandidaten-map))
+* [New York Times Wahldatenvisualisierungen](https://www.nytimes.com/elections/results/president)
+* ["Was sucht Deutschland zur Wahl?" von Truth & Beauty mit dem Googel News Lab](http://www.2q17.de/#/)
 
 
 ## Tools
