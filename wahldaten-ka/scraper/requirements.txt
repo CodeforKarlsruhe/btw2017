@@ -1,0 +1,2 @@
+beautifulsoup4==4.6.0
+backports.csv==1.0.5
