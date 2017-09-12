@@ -16,6 +16,8 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
   * [Wahllokale](daten/karlsruhe/btw2017/bundestagswahl_2017_wahllokale.geojson)
   * [Scraper für Ergebnisse](daten/karlsruhe/wahldaten-scraper/)
 
+* [Umrisse von Stadtgebiet und Stadtteilen](daten/karlsruhe/umrisse)
+
 * [Allgemeine Statistiken im Transparenzportal der Stadt Karlsruhe](https://transparenz.karlsruhe.de/daten)
 
 ### Bundesweit
