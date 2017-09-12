@@ -33,8 +33,10 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 ## Tools
 
-* [Online GeoJSON-Editor GeoJSON.io](https://geojson.io)
+* [GeoJSON.io](https://geojson.io): Online GeoJSON Editor
+* [CoGran](https://github.com/berlinermorgenpost/cogran): Tool zum Umrechnen von Statistiken zwischen verschiedenen geographischen Gebieten (z.B. Stadtteilen und Wahlbezirken :wink:)
 
 ## Weitere Links
 
 * Viele weitere hilfreiche Links sind im [Wahldaten-Repo der OKF](https://github.com/okfde/wahldaten) zu finden
+
