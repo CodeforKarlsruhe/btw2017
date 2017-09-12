@@ -7,14 +7,14 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 ### Karlsruhe
 
 * BTW 2013:
-    * [Wahlbezirke](wahldaten-ka/2013/bundestagswahl_2013_wahlbezirke.geojson)
-    * [Ergebnisse](wahldaten-ka/2013/bundestagswahl_2013.csv)
-    * [Parteien](wahldaten-ka/2013/bundestagswahl_2013_parteien.csv)
+    * [Wahlbezirke](daten/karlsruhe/btw2013/bundestagswahl_2013_wahlbezirke.geojson)
+    * [Ergebnisse](daten/karlsruhe/btw2013/bundestagswahl_2013.csv)
+    * [Parteien](daten/karlsruhe/btw2013/bundestagswahl_2013_parteien.csv)
 
 * BTW 2017:
-  * [Wahlbezirke](wahldaten-ka/2017/bundestagswahl_2017_wahlbezirke.geojson)
-  * [Wahllokale](wahldaten-ka/2017/bundestagswahl_2017_wahllokale.geojson)
-  * [Scraper für Ergebnisse](wahldaten-ka/scraper/)
+  * [Wahlbezirke](daten/karlsruhe/btw2017/bundestagswahl_2017_wahlbezirke.geojson)
+  * [Wahllokale](daten/karlsruhe/btw2017/bundestagswahl_2017_wahllokale.geojson)
+  * [Scraper für Ergebnisse](daten/karlsruhe/wahldaten-scraper/)
 
 * [Allgemeine Statistiken im Transparenzportal der Stadt Karlsruhe](https://transparenz.karlsruhe.de/daten)
 

@@ -1,9 +1,5 @@
 Die Dateien in diesem Verzeichnis basieren zum Teil auf Daten der Stadt
-Karlsruhe. Teilweise wurden diese von der Stadt selbst veröffentlicht,
-teilweise per Informationsfreiheitsanfrage erhalten.
-
-Für die von der Stadt Karlsruhe selbst veröffentlichten Daten gilt folgende
-Lizenz:
+Karlsruhe. Für diese gilt folgende Lizenz:
 
     Datensatz "Bundestagswahl 2013", Stadt Karlsruhe (https://karlsruhe.de).
     Veröffentlicht unter der Lizenz "Datenlizenz Deutschland – Namensnennung
