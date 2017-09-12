@@ -18,7 +18,7 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 * [Umrisse von Stadtgebiet und Stadtteilen](daten/karlsruhe/umrisse)
 
-* [Allgemeine Statistiken im Transparenzportal der Stadt Karlsruhe](https://transparenz.karlsruhe.de/daten)
+* [Allgemeine Statistiken im Transparenzportal der Stadt Karlsruhe](https://transparenz.karlsruhe.de/daten). Einen Teil dieser Daten haben wir [auf Wahlbezirksebene umgerechnet](daten/karlsruhe/resampling).
 
 ### Bundesweit
 
