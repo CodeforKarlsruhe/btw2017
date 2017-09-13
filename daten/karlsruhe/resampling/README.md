@@ -17,8 +17,18 @@ Die umgerechneten Statistiken findet Ihr in der Datei
 Die folgenden Statistiken wurden umgerechnet. Wo nicht anders angegeben
 beziehen sich die Daten auf das Jahr 2016.
 
+### Allgemein
+
 * `Einwohner_2016`: Anzahl der Einwohner mit Hauptwohnsitz
   ([Quelle](https://transparenz.karlsruhe.de/dataset/bevolkerung/resource/041383f1-e003-4a91-9fd2-c19adb5434ee))
+
+* `Zuzüge_2016`: Anzahl der zugezogenen Personen (Hauptwohnsitz)
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/bevolkerungsbewegungen/resource/ed7db535-9245-4107-b522-5c95045d7073))
+
+* `Wegzüge_2016`: Anzahl der weggezogenen Personen (Hauptwohnsitz)
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/bevolkerungsbewegungen/resource/adf4edbf-bc42-4245-aebf-c3a5ce97ac82))
+
+### Altersstruktur
 
 * `Alter_0-19_2016`: Anzahl der Einwohner mit Hauptwohnsitz unter 20 Jahren
   ([Quelle](https://transparenz.karlsruhe.de/dataset/altersstruktur/resource/182784ed-dec2-4970-b6b6-f8f213188643))
@@ -28,6 +38,37 @@ beziehen sich die Daten auf das Jahr 2016.
 
 * `Alter_65+_2016`: Anzahl der Einwohner mit Hauptwohnsitz im Alter von 65 und älter
   ([Quelle](https://transparenz.karlsruhe.de/dataset/altersstruktur/resource/7e3b54d8-53a7-45b5-99e6-0ecbcf963647))
+
+* `Geburten_2016`: Anzahl der Geburten
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/bevolkerungsbewegungen/resource/272a56f5-8e7b-4e72-8d90-19ee6840db23))
+
+* `Gestorbene_2016`: Anzahl der Sterbefälle
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/bevolkerungsbewegungen/resource/0fcf19fd-28e0-4032-9341-b61dc41e38d5))
+
+### Migration
+
+* `DeutscheMitMigrationshintergrund_2016`: "Personen [mit Hauptwohnsitz], die eine deutsche Staatsangehörigkeit besitzen und gleichzeitig anhand der Eintragungen im Einwohnermelderegister einen persönlichen Migrationshintergrund erkennen lassen [...]. Hierzu werden auch (deutsche) Kinder- und Jugendliche mit einer Option auf die deutsche Staatsangehörigkeit gerechnet."
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/migration/resource/82656038-a0a3-4793-843b-1ebc89ba3fed))
+
+* `AusländerInnen_2016`: Personen mit Hauptwohnsitz, die nicht die deutsche Staatsangehörigkeit besitzen
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/migration/resource/82656038-a0a3-4793-843b-1ebc89ba3fed))
+
+### Bildung
+
+* `AnteilÜbergängeGemeinschaftsschule_2016`: Quote der Übergänge von Schülern aus Grundschulen des jeweiligen *Stadtteils* auf Gemeinschaftsschulen
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/ubergange-auf-weiterfuhrende-schulen-ubergangsquoten/resource/0b7c2a18-8158-44f8-80e2-5da92d5e1deb))
+
+* `AnteilÜbergängeHauptUndWerkrealschule_2016`: Quote der Übergänge von Schülern aus Grundschulen des jeweiligen *Stadtteils* auf Haupt- und Werksrealschulen
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/ubergange-auf-weiterfuhrende-schulen-ubergangsquoten/resource/79cfcef3-34ec-4c80-887d-895dd9d79327))
+
+* `AnteilÜbergängeRealschule_2016`: Quote der Übergänge von Schülern aus Grundschulen des jeweiligen *Stadtteils* auf Realschulen
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/ubergange-auf-weiterfuhrende-schulen-ubergangsquoten/resource/38efcac4-1721-42ee-b4d4-a68853665f0f))
+
+* `AnteilÜbergängeGymnasium_2016`: Quote der Übergänge von Schülern aus Grundschulen des jeweiligen *Stadtteils* auf Gymnasien
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/ubergange-auf-weiterfuhrende-schulen-ubergangsquoten/resource/b081e346-17c7-40f1-b874-68dde596bded))
+
+* `AnteilÜbergängeSonstige_2016`: Quote der sonstigen Ab- und Übergänge von Schülern aus Grundschulen des jeweiligen *Stadtteils*, z.B. Wiederholer
+  ([Quelle](https://transparenz.karlsruhe.de/dataset/ubergange-auf-weiterfuhrende-schulen-ubergangsquoten/resource/ebec5f95-ad83-42c0-82b5-87a208fd6543))
 
 
 ## Lizenz
