@@ -2,17 +2,17 @@
 
 In ihrem [Transparenzportal](https://transparenz.karlsruhe.de) veröffentlicht
 die Stadt Karlsruhe viele statistische Daten. Allerdings liegen diese dort nur
-auf Stadtteil-Ebene vor, nicht heruntergerechnet auf Wahlbezirke. Wir haben
-sie daher selbst entsprechend umgerechnet.
+als CSV auf Stadtteil-Ebene vor. Wir haben die Daten daher nach GeoJSON
+konvertiert und auf Wahlbezirke umgerechnet:
 
-Diese Umrechnung ist allerdings nicht exakt, sondern eher als Schätzung zu
-verstehen. Das genaue Vorgehen ist unten dokumentiert.
+* **Daten auf Stadtteils-Ebene:** [stadtteile.geojson](stadtteile.geojson)
+* **Daten auf Wahlbezirks-Ebene:** [wahlbezirke.geojson](wahlbezirke.geojson)
+
+Die Umrechnung ist nicht 100% exakt, sondern eher als Schätzung zu verstehen.
+Das genaue Vorgehen ist unten dokumentiert.
 
 
 ## Umgerechnete Statistiken
-
-Die umgerechneten Statistiken findet Ihr in der Datei
-[wahlbezirke.geojson](wahlbezirke.geojson).
 
 Die folgenden Statistiken wurden umgerechnet. Wo nicht anders angegeben
 beziehen sich die Daten auf das Jahr 2016.
