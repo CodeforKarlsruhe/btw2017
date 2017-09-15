@@ -39,6 +39,8 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 * [GeoJSON.io](https://geojson.io): Online GeoJSON Editor
 * [CoGran](https://github.com/berlinermorgenpost/cogran): Tool zum Umrechnen von Statistiken zwischen verschiedenen geographischen Gebieten (z.B. Stadtteilen und Wahlbezirken :wink:)
+* [geo_assigner](https://github.com/stadt-karlsruhe/geo_assigner): Tool zum Zuordnen von Punkten zu geographischen Gebieten  (z.B. Wahlbezirken)
+* [awesome-geojson](https://github.com/tmcw/awesome-geojson): Liste mit GeoJSON-Tools
 
 ## Weitere Links
 
