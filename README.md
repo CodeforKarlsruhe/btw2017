@@ -22,6 +22,8 @@ In diesem Repository sammeln wir Daten und Informationen zur Bundestagswahl 2017
 
 * [Meldungen aus KA-Feedback](daten/karlsruhe/ka-feedback), zugeordnet zu Wahlbezirken
 
+* [KVV-Linien als GeoJSON](daten/karlsruhe/kvv-geojson)
+
 ### Bundesweit
 
 * [Bundestag-Abstimmungsergebnisse auf wahlbilanz.de](https://wahlbilanz.de/) ([GitHub](https://github.com/wahlbilanz/wahlbilanz.de))
