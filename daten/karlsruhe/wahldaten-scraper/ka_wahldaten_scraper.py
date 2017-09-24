@@ -111,6 +111,11 @@ if __name__ == '__main__':
 
     from bs4 import BeautifulSoup
 
+    if len(sys.argv) != 3:
+        sys.exit('Usage: {} INPUT_FILE OUTPUT_FILE'.format(sys.argv[0]))
+    input_filename = sys.argv[1]
+    output_filename = sys.argv[2]
+
     # fv = first vote, sv = second vote
 
     FV_URL = 'http://web3.karlsruhe.de/Stadtentwicklung/afsta/Wahlen/Wahlabend-Netmodul/2013-btw/erst/bundestag-2013-erst-wbz.php'
@@ -139,11 +144,30 @@ if __name__ == '__main__':
         '''
         Parse the first/second votes of a single voting district.
         '''
-        votes = {}
+        votes = []
         for cell, name in zip(row[5:], names):
             parts = cell.split()
             num_votes = parse_german_number(parts[0])
-            votes[name] = num_votes
+            if '(' in name:
+                parts = name.split('(')
+                party = parts[1].rstrip(')').strip()
+                parts = parts[0].split(',')
+                if parts[0].startswith('Dr. '):
+                    name = 'Dr.' + parts[1] + parts[0][4:]
+                else:
+                    name = parts[1] + parts[0]
+                name = name.replace('- ', '-')
+                name = re.sub(r'-([a-z])', r'\1', name)
+                votes.append({
+                    'name': name,
+                    'partei': party,
+                    'stimmen': num_votes,
+                })
+            else:
+                votes.append({
+                    'partei': name,
+                    'stimmen': num_votes,
+                })
         return votes
 
     # Parse data for each district
@@ -153,69 +177,36 @@ if __name__ == '__main__':
             assert fv_row[i] == sv_row[i]
         district_num = fix_district_number(fv_row[0])
         borough_num = district_to_borough(district_num)
-        district = {
-            'Wahlkreisnummer': 271,
-            'Wahlkreisname': 'Karlsruhe-Stadt',
-            'Stadtteilnummer': borough_num,
-            'Stadtteilname': BOROUGHS.get(borough_num),
-            'Wahlbezirksnummer': district_num,
-            'Wahlbezirksname': fv_row[1],
-            'Wahlberechtigte insgesamt': parse_german_number(fv_row[2]),
-            'Wähler/-innen': parse_german_number(fv_row[3]),
-            'Wahlbeteiligung': parse_german_number(fv_row[4].rstrip('%')),
+        btw2017 = {
+            'wahlberechtigte': parse_german_number(fv_row[2]),
+            'waehler/-innen': parse_german_number(fv_row[3]),
+            'erststimme': parse_votes(fv_row, candidates),
+            'zweitstimme': parse_votes(sv_row, parties),
+            'wahlbeteiligung': parse_german_number(fv_row[4].rstrip('%')),
         }
-        # Extract votes for each candidate
-        district['Erststimmen'] = parse_votes(fv_row, candidates)
-        district['Gültige Erststimmen'] = sum(district['Erststimmen'].values())
-        district['Zweitstimmen'] = parse_votes(sv_row, parties)
-        district['Gültige Zweitstimmen'] = sum(district['Zweitstimmen'].values())
+        district = {
+            'stadtteilnummer': borough_num,
+            'stadtteilname': BOROUGHS.get(borough_num),
+            'wahlbezirksnummer': district_num,
+            'wahlbezirksname': fv_row[1],
+            'btw2017': btw2017,
+        }
         districts[district_num] = district
 
-    # Combine postal votes into a single row
-    postal_votes = {
-        'Wahlkreisnummer': 271,
-        'Wahlkreisname': 'Karlsruhe-Stadt',
-        'Stadtteilname': 'Briefwahl',
-        'Stadtteilnummer': None,
-        'Wahlbezirksnummer': None,
-        'Wahlbezirksname': None,
-        'Wahlbeteiligung': None,
-        'Wahlberechtigte insgesamt': None,
-        'Wähler/-innen': 0,
-        'Erststimmen': {},
-        'Zweitstimmen': {},
-    }
-    for district_num in districts.keys():
-        if districts[district_num]['Wahlbezirksname'] == 'Briefwahl':
-            district = districts.pop(district_num)
-            postal_votes['Wähler/-innen'] += district['Wähler/-innen']
-            for vote_type in 'Erststimmen', 'Zweitstimmen':
-                for key, value in district[vote_type].iteritems():
-                    postal_votes[vote_type][key] = postal_votes[vote_type].get(key, 0) + value
-                postal_votes['Gültige ' + vote_type] = sum(postal_votes[vote_type].values())
-    districts['Briefwahl'] = postal_votes
+    # Remove postal votes
+    for district_num in list(districts.keys()):
+        if districts[district_num]['wahlbezirksname'] == 'Briefwahl':
+            districts.pop(district_num)
 
-    # Export to CSV
-    CSV_COLUMNS = (['Wahlkreisnummer', 'Wahlkreisname', 'Stadtteilnummer',
-                   'Stadtteilname', 'Wahlbezirksnummer', 'Wahlbezirksname',
-                   'Wahlberechtigte insgesamt', 'Wähler/-innen',
-                   'Gültige Erststimmen'] + candidates + ['Gültige Zweitstimmen']
-                   + parties)
-    with io.open('results.csv', 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        writer.writerow(CSV_COLUMNS)
-        for district_num in sorted(districts):
-            d = districts[district_num]
-            row = [d['Wahlkreisnummer'], d['Wahlkreisname'], d['Stadtteilnummer'],
-                   d['Stadtteilname'], d['Wahlbezirksnummer'], d['Wahlbezirksname'],
-                   d['Wahlberechtigte insgesamt'], d['Wähler/-innen'],
-                   d['Gültige Erststimmen']]
-            row.extend(d['Erststimmen'][c] for c in candidates)
-            row.append(d['Gültige Zweitstimmen'])
-            row.extend(d['Zweitstimmen'][p] for p in parties)
-            writer.writerow(row)
-
-    # Export to JSON
-    with open('results.json', 'w') as f:
-        json.dump(districts, f)
+    # Export to GeoJSON
+    with open(input_filename, 'r', encoding='utf-8') as f:
+        geojson = json.load(f)
+    for f in geojson['features']:
+        p = f['properties']
+        district = districts[p['wahlbezirksnummer']]
+        if district['wahlbezirksname'] != p['wahlbezirksname']:
+            print((district['wahlbezirksname'], p['wahlbezirksname']))
+        p.update(district)
+    with open(output_filename, 'w', encoding='utf-8') as f:
+        json.dump(geojson, f)
 
